@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "pnpm --filter @workspace/dofus-run-timer run build",
+  "outputDirectory": "artifacts/dofus-run-timer/dist/public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
