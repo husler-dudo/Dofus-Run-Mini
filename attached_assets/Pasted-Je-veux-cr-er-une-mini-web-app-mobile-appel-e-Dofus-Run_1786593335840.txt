@@ -1,0 +1,109 @@
+Je veux créer une mini web-app mobile appelée "Dofus Run Timer".
+
+OBJECTIF PRINCIPAL :
+Créer un chronomètre extrêmement simple pour mesurer le temps passé dans chaque donjon pendant mes runs Dofus Touch.
+
+IMPORTANT :
+- Ne pas utiliser Firebase.
+- Ne pas utiliser Supabase.
+- Ne pas créer de système de compte.
+- Ne pas créer de backend ou de base de données pour cette V1.
+- Utiliser uniquement le stockage local du navigateur (localStorage) pour conserver les données.
+- L'application doit être parfaitement utilisable sur iPhone et tablette.
+- Interface mobile-first, simple, rapide et lisible.
+
+FONCTIONNEMENT :
+
+1. Écran principal :
+- Titre : "Dofus Run Timer"
+- Afficher une liste de donjons.
+- Permettre de sélectionner le donjon actuel.
+- Gros chronomètre au centre : HH:MM:SS.
+
+2. Boutons :
+- "DÉMARRER"
+- "PAUSE"
+- "REPRENDRE"
+- "TERMINER LE DONJON"
+- "NOUVELLE RUN"
+
+3. Quand je clique sur DÉMARRER :
+- Le chronomètre commence immédiatement.
+- Le temps doit continuer correctement même si je changes d'application ou si l'écran est momentanément en arrière-plan.
+- Ne pas simplement incrémenter un compteur avec setInterval : calculer le temps à partir des timestamps afin d'éviter les erreurs lorsque le navigateur ralentit ou suspend le JavaScript.
+
+4. PAUSE :
+- Arrête le chronomètre.
+- Conserve exactement le temps déjà écoulé.
+- REPRENDRE continue à partir du même temps.
+
+5. TERMINER LE DONJON :
+- Arrête le chrono.
+- Enregistre automatiquement le temps du donjon.
+- Affiche le donjon dans une liste des donjons terminés.
+- Exemple :
+  "Ben le Ripate — 08:43"
+
+6. Après avoir terminé un donjon :
+- Permettre de sélectionner immédiatement le donjon suivant.
+- Le nouveau chronomètre doit commencer à 00:00:00.
+
+7. SAUVEGARDE :
+Utiliser localStorage pour sauvegarder :
+- la run actuelle ;
+- les donjons terminés ;
+- leurs temps ;
+- le chrono en cours ;
+- son état (en cours / pause).
+
+Si je ferme puis rouvre la page, la run doit être récupérée.
+
+8. NOUVELLE RUN :
+- Demander une confirmation avant d'effacer la run actuelle.
+- Puis remettre tous les temps à zéro.
+
+9. LISTE DES DONJONS :
+Prévoir une liste facilement modifiable dans le code.
+Pour la V1, utiliser quelques exemples :
+- Donjon 1
+- Donjon 2
+- Donjon 3
+- Donjon 4
+- Ben le Ripate
+- Obsidiante
+- Tengu
+- Korriandre
+- Kolosso
+- Glourséleste
+- La Forêt Pétrifiée
+- La Crevasse Perge
+- La Bourgade
+
+Je veux pouvoir facilement modifier cette liste plus tard.
+
+10. DESIGN :
+- Très propre.
+- Minimaliste.
+- Mobile-first.
+- Gros chiffres pour le chrono.
+- Gros boutons faciles à toucher avec le doigt.
+- Pas d'animations inutiles.
+- Pas de dashboard complexe.
+- Pas de statistiques pour l'instant.
+- Pas de graphiques.
+- Pas de système de compte.
+
+11. IMPORTANT :
+Avant de terminer, teste réellement :
+- démarrage ;
+- pause ;
+- reprise ;
+- terminaison ;
+- changement de donjon ;
+- fermeture/réouverture de la page ;
+- récupération du chrono ;
+- récupération des temps enregistrés ;
+- nouvelle run.
+
+Ne rajoute aucune fonctionnalité non demandée.
+Le but est d'avoir une V1 extrêmement simple, fiable et rapide.

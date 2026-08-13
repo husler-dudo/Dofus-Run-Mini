@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Dofus Run Timer"
+description = "Un chronomètre mobile-first pour mesurer et sauvegarder localement le temps passé dans chaque donjon de Dofus Touch, sans compte ni backend."
+version = "1.0.0"
+id = "artifacts/dofus-run-timer"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24896
+
+[services.development]
+run = "pnpm --filter @workspace/dofus-run-timer run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dofus-run-timer", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dofus-run-timer/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24896"
+BASE_PATH = "/"
