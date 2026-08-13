@@ -1,0 +1,147 @@
+Je veux maintenant modifier la logique de l'application sans casser le chronomètre actuel.
+
+IMPORTANT :
+Conserver tout ce qui fonctionne déjà concernant :
+- démarrage du chrono ;
+- pause ;
+- reprise ;
+- terminaison ;
+- sauvegarde localStorage ;
+- récupération après fermeture/rechargement.
+
+Je veux maintenant transformer l'application en véritable outil de suivi de RUN.
+
+CONCEPT PRINCIPAL :
+
+Une RUN est une séquence ordonnée de donjons.
+
+L'utilisateur doit pouvoir définir à l'avance l'ordre exact des donjons qu'il souhaite effectuer.
+
+Exemple :
+
+1. Donjon A
+2. Donjon B
+3. Donjon C
+4. Ben le Ripate
+5. Obsidiante
+6. Tengu
+
+Une fois la séquence définie, l'application doit suivre automatiquement cet ordre.
+
+PENDANT LA RUN :
+
+- L'utilisateur appuie sur "COMMENCER LA RUN".
+- Le chrono global démarre.
+- Le premier donjon devient automatiquement le donjon actif.
+- L'utilisateur appuie sur "DÉMARRER LE DONJON".
+- Le chrono du donjon démarre.
+- Lorsqu'il termine le donjon, il appuie sur "DONJON TERMINÉ".
+- Le temps du donjon est enregistré.
+- Le donjon suivant devient automatiquement actif.
+- Le chrono du nouveau donjon est remis à zéro.
+- L'utilisateur n'a jamais besoin de sélectionner manuellement le donjon suivant pendant une run.
+
+AFFICHAGE :
+
+Afficher clairement :
+
+RUN
+01:37:42
+
+Donjon 4 / 17
+
+BEN LE RIPATE
+
+08:43
+
+[ PAUSE ]
+
+[ ✓ DONJON TERMINÉ ]
+
+Après "DONJON TERMINÉ", passer automatiquement au suivant.
+
+CHRONOMÈTRES :
+
+Il doit y avoir :
+1. un chrono global de la RUN ;
+2. un chrono du donjon actuel.
+
+Le chrono global ne doit pas être remis à zéro entre les donjons.
+
+Le chrono du donjon doit être remis à zéro lorsque le donjon est terminé.
+
+UTILISATION MOBILE :
+
+L'interface doit être mobile-first.
+Les boutons doivent être suffisamment grands pour être utilisés rapidement sur un téléphone.
+Le chrono doit être très visible.
+
+ROUTES :
+
+Créer un système de ROUTES.
+
+Une route est une liste ordonnée de donjons.
+
+Prévoir plusieurs routes indépendantes :
+
+- Tour du monde
+- Nematompousse
+- Frigost
+- Route personnalisée
+
+L'utilisateur doit pouvoir sélectionner une route avant de commencer.
+
+Il doit également pouvoir créer/modifier une route personnalisée en ajoutant des donjons et en changeant leur ordre.
+
+IMPORTANT :
+Ne pas mélanger automatiquement les quêtes et les routes.
+
+Un même donjon peut apparaître dans plusieurs routes, mais chaque route possède son propre ordre.
+
+ÉCRAN DE PRÉPARATION :
+
+Avant de commencer une run, afficher la liste complète de la route.
+
+Exemple :
+
+FRIGOST
+
+1. Donjon X
+2. Donjon Y
+3. Ben le Ripate
+4. Obsidiante
+5. Tengu
+6. Korriandre
+
+Permettre de modifier l'ordre avant de commencer.
+
+Pendant la run, verrouiller la structure de la route afin d'éviter une modification accidentelle.
+
+INTERFACE :
+
+Je veux un design sombre inspiré des interfaces Dofus Touch :
+- fond très sombre ;
+- cartes sombres ;
+- texte clair ;
+- accents colorés ;
+- interface compacte ;
+- aucune grande zone blanche ;
+- très bonne lisibilité de nuit ;
+- priorité au chrono et au donjon actuel.
+
+Ne pas copier exactement une interface existante.
+S'inspirer uniquement de l'idée générale d'une interface de jeu sombre et dense.
+
+NE PAS AJOUTER POUR L'INSTANT :
+- comptes utilisateurs ;
+- Firebase ;
+- Supabase ;
+- backend ;
+- statistiques complexes ;
+- graphiques ;
+- système de paiement ;
+- synchronisation cloud.
+
+Continuer à utiliser localStorage pour cette version.
+
+Avant de modifier le projet, vérifie que la logique actuelle du chrono fonctionne et ne la casse pas.
